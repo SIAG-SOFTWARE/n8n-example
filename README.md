@@ -1,2 +1,5 @@
-# n8n-example
-Sample n8n workflow showing automation for data collection and API-based actions. Developed by SIAG Software.
+/n8n-example
+├── README.md
+├── example_workflow.json   → export de flujo n8n (p. ej. conexión API + Gmail + Google Sheets)
+└── docs/
+    └── workflow_diagram.png
