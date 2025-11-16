@@ -1,71 +1,63 @@
-SIAG n8n Example Workflow
+🧩 SIAG Software — n8n Example Workflow
 
-A minimal example workflow demonstrating how SIAG Software uses n8n for automation, data extraction and integration pipelines.
+This repository provides a minimal, clean workflow example built for n8n.
+Its goal is to serve as a quick reference for clients and developers evaluating SIAG Software’s automation capabilities.
 
-This example includes:
+🔧 What this example does
 
-✔️ A basic HTTP request
+A simple two-step automation:
 
-✔️ Writing data into Google Sheets
+HTTP Request → Fetch a sample TODO item from a public API.
 
-✔️ A clean JSON format ready for import
+Google Sheets Append → Write the received data into a Google Sheet.
 
-✔️ Simple, beginner-friendly automation
+This mirrors a common real-world automation pattern:
+collect → transform → store.
+
+📊 Diagram — Basic Workflow
+HTTP Request  ───►  Google Sheets Append
+
+
+And here is the visual version:
+
+📁 Files Included
 ```
-📁 Files included
 n8n-example/
-├── example_workflow.json   → Import directly into n8n
-└── README.md
+│
+├── example_workflow.json   # Full n8n workflow (import directly into n8n)
+└── docs/
+    └── diagram_basic.png   # Visual diagram of workflow
 ```
-🚀 Usage
-1. Open n8n
+🧪 How to Use
 
-Self-hosted or Cloud version both work.
+Open your n8n instance
 
-2. Import the workflow
+Go to Workflows → Import
 
-Go to:
-n8n → Workflows → Import From File → select example_workflow.json
+Upload example_workflow.json
 
-3. Configure nodes
+Replace the sheetId with your own Google Sheet
 
-Replace SHEET_ID with your Google Sheets ID
+Add Google credentials in n8n if required
 
-Connect your Google OAuth credentials
+🧠 Why this exists
 
-Run the workflow
+This is a minimal educational example used for:
 
-🧪 What this workflow does
+client onboarding
 
-1️⃣ Fetches a test JSON resource:
-https://jsonplaceholder.typicode.com/todos/1
+demonstrating workflow structure
 
-2️⃣ Extracts id and title
+testing n8n installations
 
-3️⃣ Appends the result into Google Sheets:
+explaining API → Sheet automations in consulting sessions
 
-ID	Title
-1	delectus aut autem
-📝 Notes
+For a real production-grade example, see:
 
-This is a minimal SIAG workflow for demonstration.
+👉 n8n-workflows-advanced (your other repo)
 
-For production-level pipelines, see
-👉 n8n-workflows-advanced (multi-step, scraping, notifications, architecture diagram, etc.)
+📬 Contact
 
-📄 License
-
-MIT — SIAG Software
-
-```
-   ┌─────────────────┐
-   │  HTTP Request    │
-   │  (Fetch JSON)    │
-   └─────────┬───────┘
-             │
-             ▼
-   ┌─────────────────┐
-   │ Google Sheets    │
-   │ (Append Row)     │
-   └─────────────────┘
-```
+SIAG Software
+AI Automation • Chatbots • Full-Stack Development
+📧 siag.software@protonmail.com
