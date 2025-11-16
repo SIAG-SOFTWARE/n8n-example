@@ -17,9 +17,6 @@ collect → transform → store.
 📊 Diagram — Basic Workflow
 HTTP Request  ───►  Google Sheets Append
 
-
-And here is the visual version:
-
 📁 Files Included
 ```
 n8n-example/
