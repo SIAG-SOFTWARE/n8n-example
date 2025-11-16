@@ -2,18 +2,25 @@
   "name": "SIAG Example Workflow",
   "nodes": [
     {
-      "parameters": { "url": "https://jsonplaceholder.typicode.com/todos/1" },
+      // Step 1: Fetch data from test API
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/todos/1"
+      },
       "name": "HTTP Request",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [250, 300]
     },
     {
+      // Step 2: Append extracted data into Google Sheets
       "parameters": {
         "operation": "append",
         "sheetId": "SHEET_ID",
         "range": "A1",
-        "data": [["ID", "Title"], ["={{$json.id}}", "={{$json.title}}"]]
+        "data": [
+          ["ID", "Title"],
+          ["={{$json.id}}", "={{$json.title}}"]
+        ]
       },
       "name": "Google Sheets",
       "type": "n8n-nodes-base.googleSheets",
@@ -22,6 +29,8 @@
     }
   ],
   "connections": {
-    "HTTP Request": { "main": [[{ "node": "Google Sheets", "type": "main", "index": 0 }]] }
+    "HTTP Request": {
+      "main": [[{ "node": "Google Sheets", "type": "main", "index": 0 }]]
+    }
   }
 }
