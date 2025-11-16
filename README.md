@@ -23,7 +23,8 @@ n8n-example/
 │
 ├── example_workflow.json   # Full n8n workflow (import directly into n8n)
 └── docs/
-    └── diagram_basic.png   # Visual diagram of workflow
+│   └── diagram_basic.png   # Visual diagram of workflow
+└── README.md   
 ```
 🧪 How to Use
 
