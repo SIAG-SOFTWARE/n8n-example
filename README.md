@@ -1,58 +1,74 @@
-🧠 About SIAG Software
+SIAG n8n Example Workflow
 
-We build autonomous and ethical intelligent systems — bridging automation, AI, and software craftsmanship.
-Learn more at SIAG Software GitHub
-.
+A minimal example workflow demonstrating how SIAG Software uses n8n for automation, data extraction and integration pipelines.
 
-🟢 This demo is open-source and free for educational or professional review.
+This example includes:
 
+✔️ A basic HTTP request
 
----
+✔️ Writing data into Google Sheets
 
-## ⚙️ **2️⃣ n8n-example / README.md**
-```markdown
-# ⚙️ n8n Example Workflow — SIAG Software
+✔️ A clean JSON format ready for import
 
-A minimal automation flow built in **n8n**, showing how to connect APIs, process data, and execute actions automatically.  
-This example is part of the SIAG Software open portfolio.
+✔️ Simple, beginner-friendly automation
 
----
+📁 Files included
+n8n-example/
+├── example_workflow.json   → Import directly into n8n
+└── README.md
 
-### 🧩 Features
-- JSON export of a full n8n workflow  
-- Example: fetch data from an API → process → store in Google Sheets  
-- Modular and easy to import in your own n8n instance  
-- Includes basic documentation and diagram for reference
+🚀 Usage
+1. Open n8n
 
----
+Self-hosted or Cloud version both work.
 
-### 🧠 Concept
-This workflow represents SIAG’s approach to **autonomous digital pipelines** — integrating systems for smart task execution with minimal human intervention.
+2. Import the workflow
 
----
+Go to:
+n8n → Workflows → Import From File → select example_workflow.json
 
-### 🗂️ Contents
+3. Configure nodes
 
+Replace SHEET_ID with your Google Sheets ID
 
-/n8n-example
-├── example_workflow.json
-└── docs/
-└── workflow_diagram.png
+Connect your Google OAuth credentials
 
+Run the workflow
 
-To import the workflow:
-1. Open your n8n instance  
-2. Go to **Workflows → Import from File**  
-3. Select `example_workflow.json`  
+🧪 What this workflow does
 
----
+1️⃣ Fetches a test JSON resource:
+https://jsonplaceholder.typicode.com/todos/1
 
-### 🔧 Requirements
-- n8n v1.0 or higher
-- Basic API credentials (e.g. Google Sheets, Notion, etc.)
+2️⃣ Extracts id and title
 
----
+3️⃣ Appends the result into Google Sheets:
 
-### 🧠 About SIAG Software
-We specialize in **AI-driven automation** and **custom workflow design** for modern teams.  
-More examples available at [SIAG Software GitHub](https://github.com/SIAG-Software).
+ID	Title
+1	delectus aut autem
+📝 Notes
+
+This is a minimal SIAG workflow for demonstration.
+
+For production-level pipelines, see
+👉 n8n-workflows-advanced (multi-step, scraping, notifications, architecture diagram, etc.)
+
+📄 License
+
+MIT — SIAG Software
+
+✅ 2. Mini-diagram (diagram_basic.png)
+
+Aquí tienes un ASCII-diagram ultra simple para pegar en el README.
+(PNG listo para GitHub te lo genero cuando me digas "sí, generarlo".)
+
+   ┌─────────────────┐
+   │  HTTP Request    │
+   │  (Fetch JSON)    │
+   └─────────┬───────┘
+             │
+             ▼
+   ┌─────────────────┐
+   │ Google Sheets    │
+   │ (Append Row)     │
+   └─────────────────┘
