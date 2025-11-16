@@ -11,12 +11,12 @@ This example includes:
 ✔️ A clean JSON format ready for import
 
 ✔️ Simple, beginner-friendly automation
-
+```
 📁 Files included
 n8n-example/
 ├── example_workflow.json   → Import directly into n8n
 └── README.md
-
+```
 🚀 Usage
 1. Open n8n
 
@@ -57,11 +57,7 @@ For production-level pipelines, see
 
 MIT — SIAG Software
 
-✅ 2. Mini-diagram (diagram_basic.png)
-
-Aquí tienes un ASCII-diagram ultra simple para pegar en el README.
-(PNG listo para GitHub te lo genero cuando me digas "sí, generarlo".)
-
+```
    ┌─────────────────┐
    │  HTTP Request    │
    │  (Fetch JSON)    │
@@ -72,3 +68,4 @@ Aquí tienes un ASCII-diagram ultra simple para pegar en el README.
    │ Google Sheets    │
    │ (Append Row)     │
    └─────────────────┘
+```
